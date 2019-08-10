@@ -83,7 +83,7 @@ function bigDonaters (arr, cb) {
 	return cb(arr.filter(x => x.donation >= 200))
 }
 bigDonaters(runners, function(result) {
-	console.log(result.map(x => { return `${x.first_name} donated $${x.donation}}` }))
+	console.log(result.map(x => { return `${x.first_name} donated $${x.donation}` }))
 })
 
 // Problem 2
