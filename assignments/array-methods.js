@@ -78,7 +78,21 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Print out the first name of the runner and their donation amount if they donated over 200
+function bigDonaters (arr, cb) {
+	return cb(arr.filter(x => x.donation >= 200))
+}
+bigDonaters(runners, function(result) {
+	console.log(result.map(x => { return `${x.first_name} donated $${x.donation}}` }))
+})
 
 // Problem 2
+// Print out the sum of the donations if the donated amount was over 200
+bigDonaters(runners, function(result) {
+	console.log(result.reduce((total, x) => { return total + x.donation }, 0 ))
+})
 
 // Problem 3
+// Print out the total amount of miles ran by all the runners with a size M shirt
+let mediumRunners = runners.filter(x => x.shirt_size === 'M')
+console.log(`${mediumRunners.length * 3} miles ran`)
